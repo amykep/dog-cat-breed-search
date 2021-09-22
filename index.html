@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!--libraries used-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+  <!--style page link-->
+  <link rel="stylesheet" href="./style.css" />
+  <title>Dog and Cat Breeds</title>
+</head>
+
+<!--"navbar"/header-->
+
+<body class="flex-column min-100-vh">
+  <header class="hero">
+    <h1 class="app-title">
+      <i class="fas fa-info-circle"></i> Dog and Cat Breeds
+    </h1>
+    <p>
+      Get facts and a picture about your favorite dog and cat breeds!
+    </p>
+  </header>
+
+  <!--search by breed container-->
+  <!--cat breed search container-->
+  <main class="flex-row justify-space-between">
+    <div class="column is-one-thirds">
+      <div class="card">
+        <h4 class="card-header text-uppercase">Search by Breed</h4>
+        <div class="card-body" id="language-buttons">
+
+          <h4 class="search-header">Enter a Cat Breed:</h4>
+
+          <form id="cat-form">
+            <input type="text" id="cat-name" class="form-input" />
+            <input type="submit" value="Submit Cat Breed" class="button is-link" />
+          </form>
+          <!--dog breed search container-->
+          <h4 class="search-header">Enter a Dog Breed:</h4>
+
+          <form id="dog-form">
+            <input type="text" id="dog-name" class="form-input" />
+            <input type="submit" value="Submit Dog Breed" class="button is-link" />
+          </form>
+
+        </div>
+      </div>
+      <!--previous searches container-->
+      <div class="card">
+
+        <h3 class="card-header text-uppercase">Previous Searches</h3>
+
+        <div class="card-body">
+          <div>
+            <h4 class="search-header">Previous Cat Searches</h4>
+            <img src="https://img.icons8.com/fluency/48/000000/cat.png" />
+            <ul id="catsearches"></ul>
+          </div>
+          <div>
+            <h4 class="search-header">Previous Dog Searches </h4>
+            <img src="https://img.icons8.com/material-sharp/48/000000/dog.png" />
+            <ul id="dogsearches"></ul>
+          </div>
+          <!--clear search results button-->
+          <button class=btn id="clearbutton">Clear Search Results</button>
+
+          <!-- modal for empty search error-->
+          <div id="id01" class="w3-modal">
+            <div class="w3-modal-content w3-animate-left w3-card-4">
+              <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                  class="w3-button w3-display-topright">&times;</span>
+              </header>
+              <div class="w3-container">
+
+                <h2 style="text-align: center; line-height: 1.3;">This won't work without a breed name.</h2>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- modal for invalid breed error-->
+          <div id="id02" class="w3-modal">
+            <div class="w3-modal-content w3-animate-left w3-card-4">
+              <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id02').style.display='none'"
+                  class="w3-button w3-display-topright">&times;</span>
+              </header>
+              <div class="w3-container">
+
+                <h2 style="text-align: center; line-height: 1.3;">Sorry, we do not have this breed.</h2>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--container for successful breed search, facts & picture populate-->
+    <div class="column is-two-thirds">
+
+      <div id="facts-container" class="list-group"></div>
+    </div>
+  </main>
+  <!--link for javascript-->
+  <script src="script.js"></script>
+</body>
+
+</html>
